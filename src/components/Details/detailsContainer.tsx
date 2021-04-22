@@ -28,13 +28,16 @@ const DetailsContainer = ({ id, data = [] }) => {
       dispatch(addToMyList({ id: id, image: data.image, title: data.title }));
       setClick(true);
     }
+    
   };
   return loading ? (
     <Loader />
   ) : (
     <>
-      <div
-        className={`${theme.background} ${theme.text.selected} w-full  py-20 lg:px-20  lg:py-8 flex justify-center`}
+    {console.log(data)}
+    <div className= " w-full h-full rounded-lg object-cover" style={{backgroundImage: 'url('+data.image+')',backgroundSize:'cover', backgroundRepeat: 'no-repeat'}}>
+      <div 
+        className={`${theme.text.selected} w-full  py-20 lg:px-20  lg:py-8 flex justify-center`}
       >
         <div className="w-full lg:w-10/12 flex flex-col justify-center items-center lg:flex-row lg:justify-start lg:items-stretch ">
           <div className="rounded-lg w-8/12 lg:w-4/12 my-8 lg:my-0 shadow-2xl">
@@ -129,6 +132,7 @@ const DetailsContainer = ({ id, data = [] }) => {
         id={id}
         image={data.image}
       />
+      </div>
     </>
   );
 };

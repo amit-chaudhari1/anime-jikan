@@ -13,6 +13,7 @@ const Details = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     if (id) {
+      console.log("HEllog there marvelous id:"+id);
       const DETAILURL = URL.DETAILS + id;
       dispatch(asyncDataAction(DETAILURL));
     }
