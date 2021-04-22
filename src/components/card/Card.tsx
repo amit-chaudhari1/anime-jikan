@@ -12,7 +12,9 @@ const MovieWrapper = styled.a`
   transition: all 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
   &:hover {
     transform: scale(1.03);
-    color: ${({ card }) => card.texthover};
+    color: ${({ card }) => {
+      return card.texthover;
+    }};
     ::after {
       transform: scaleY(1);
       opacity: 1;
