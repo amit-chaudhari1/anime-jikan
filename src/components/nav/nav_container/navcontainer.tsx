@@ -39,7 +39,7 @@ const NavContainer = ({ links, heading }) => {
   const theme = useSelector((state) => state.theme);
 
   return (
-    <div className="w-10/12 my-5">
+    <div className="w-10/12 my-5" style={{maxHeight:'100vh', overflowY:'auto'}}>
       <span
         className={`${theme.text.selected} w-10/12 font-bold mx-2 text-xl`}
       >

@@ -34,8 +34,8 @@ const DetailsContainer = ({ id, data = [] }) => {
     <Loader />
   ) : (
     <>
-    {console.log(data)}
-    <div className= " w-full h-full rounded-lg object-cover" style={{backgroundImage: 'url('+data.image+')',backgroundSize:'cover', backgroundRepeat: 'no-repeat'}}>
+    {/* {console.log(data)}
+    <div className= " w-full h-full rounded-lg object-cover" style={{backgroundImage: 'url('+data.image+')',backgroundSize:'cover', backgroundRepeat: 'no-repeat', overflowY:'auto'}}> */}
       <div 
         className={`${theme.text.selected} w-full  py-20 lg:px-20  lg:py-8 flex justify-center`}
       >
@@ -132,7 +132,7 @@ const DetailsContainer = ({ id, data = [] }) => {
         id={id}
         image={data.image}
       />
-      </div>
+      {/* </div> */}
     </>
   );
 };
