@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useSelector } from "react-redux";
 import { useRouter } from "next/router";
-import styled from "styled-components"
+import styled from "styled-components";
 const InSpan = styled.span`
   &:hover {
     border-color: ${({ border }) => border.notselected};
@@ -39,7 +39,7 @@ const NavContainer = ({ links, heading }) => {
   const theme = useSelector((state) => state.theme);
 
   return (
-    <div className="w-10/12 my-5" style={{maxHeight:'100vh', overflowY:'auto'}}>
+    <div className="w-10/12 my-5 scrollbar" id="style-1">
       <span
         className={`${theme.text.selected} w-10/12 font-bold mx-2 text-xl`}
       >
