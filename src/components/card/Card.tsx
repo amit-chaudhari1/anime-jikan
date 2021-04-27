@@ -30,7 +30,7 @@ const MovieWrapper = styled.a`
     border-radius: 0.8rem;
     transform: scaleY(0);
     transform-origin: top;
-    background-color: ${({ card }) => card.bghover};
+    background-color: ${(card) => card.bghover};
 
     opacity: 0;
     z-index: -99;
@@ -63,7 +63,7 @@ const DetailsWrapper = styled.div`
 `;
 
 const Card = ({ title, id, heading, image, episodenumber }) => {
-  const theme = useSelector((state) => state.theme);
+  const theme = useSelector((state: HomeRootState) => state.theme);
   return (
     <Link
       href={

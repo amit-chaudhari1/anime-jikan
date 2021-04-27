@@ -7,3 +7,7 @@ declare module "countapi-js";
 declare module "@svgr/webpack";
 declare module "postcss-nesting";
 declare module "babel-plugin-styled-components";
+
+//And some work around solutions...
+
+interface HomeRootState {}

@@ -15,7 +15,7 @@ const Search = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     if (pages) {
-      const SEARCHURL = URL.SEARCH + pages.join("/");
+      const SEARCHURL = URL.SEARCH + pages.concat("/");
       dispatch(asyncDataAction(SEARCHURL));
     }
   }, [pages]);
