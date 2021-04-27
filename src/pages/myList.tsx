@@ -11,8 +11,8 @@ export const Emessage = ({ message }) => {
       <div className="w-full flex h-4/6 justify-center items-center">
         <img
           width={400}
-          src={theme.theme == "dark" ? "/404dark.svg" : "/404light.svg"}
-          />
+          src={theme[theme] == "dark" ? "/404dark.svg" : "/404light.svg"}
+        />
       </div>
       <div className=" flex flex-col justify-center items-center w-full">
         <span className={`${theme.text.notselected} text-4xl`}>
@@ -24,7 +24,7 @@ export const Emessage = ({ message }) => {
             <Link href={"/popular/1"}>
               <span
                 className={` text-blue-400 mx-1 cursor-pointer font-bold text-xl `}
-                >
+              >
                 here
               </span>
             </Link>
@@ -35,15 +35,14 @@ export const Emessage = ({ message }) => {
   );
 };
 
-import {Discover } from "../utils/data";
+import { Discover } from "../utils/data";
 const MyList = () => {
-  const { myList} = useSelector((state) => state);
-  
+  const { myList } = useSelector((state) => state);
+
   return (
     <Layout title={"My List"}>
       {myList.length > 0 ? (
-        <Container Data={myList} heading={"My List"} Icon={Discover[2].icon}
- />
+        <Container Data={myList} heading={"My List"} Icon={Discover[2].icon} />
       ) : (
         <Emessage message={"Add your favourite animes"} />
       )}
