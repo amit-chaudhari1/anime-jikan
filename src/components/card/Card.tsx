@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { State } from "styled-components";
 import { useSelector } from "react-redux";
 import Link from "next/link";
 import { AiFillCalendar } from "react-icons/ai";
@@ -12,8 +12,8 @@ const MovieWrapper = styled.a`
   transition: all 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
   &:hover {
     transform: scale(1.03);
-    color: ${(card) => {
-      return card["texthover"];
+    color: ${({ card }) => {
+      return card.texthover;
     }};
     ::after {
       transform: scaleY(1);
@@ -30,7 +30,7 @@ const MovieWrapper = styled.a`
     border-radius: 0.8rem;
     transform: scaleY(0);
     transform-origin: top;
-    background-color: ${(card) => card["bghover"]};
+    background-color: ${({ card }) => card.bghover};
 
     opacity: 0;
     z-index: -99;
@@ -63,7 +63,7 @@ const DetailsWrapper = styled.div`
 `;
 
 const Card = ({ title, id, heading, image, episodenumber }) => {
-  const theme = useSelector((state: HomeRootState) => state.theme);
+  const theme = useSelector((state: State) => state.theme);
   return (
     <Link
       href={

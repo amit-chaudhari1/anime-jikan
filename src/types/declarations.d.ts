@@ -9,7 +9,3 @@ declare module "postcss-nesting";
 declare module "babel-plugin-styled-components";
 
 //And some work around solutions...
-
-interface HomeRootState {
-  theme: card;
-}
