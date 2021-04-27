@@ -10,4 +10,6 @@ declare module "babel-plugin-styled-components";
 
 //And some work around solutions...
 
-interface HomeRootState {}
+interface HomeRootState {
+  theme: card;
+}
