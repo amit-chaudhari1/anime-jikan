@@ -1,4 +1,4 @@
-import styled, { State } from "styled-components";
+import styled from "styled-components";
 import { useSelector } from "react-redux";
 import Link from "next/link";
 import { AiFillCalendar } from "react-icons/ai";

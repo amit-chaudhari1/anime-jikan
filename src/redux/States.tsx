@@ -1,5 +1,3 @@
-// import { DefaultTheme } from "styled-components/native";
-import { DefaultRootState } from "";
 declare module "styled-components" {
   export interface abx {
     dark: {
@@ -85,7 +83,7 @@ declare module "styled-components" {
   }
 }
 
-export const States: State = {
+export const States = {
   dark: {
     theme: "dark",
     background: "bg-background",
