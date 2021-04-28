@@ -1,4 +1,91 @@
-export const States = {
+// import { DefaultTheme } from "styled-components/native";
+import { DefaultRootState } from "";
+declare module "styled-components" {
+  export interface abx {
+    dark: {
+      theme: string;
+      background: string;
+      shadow: string;
+      text: {
+        selected: string;
+        notselected: string;
+      };
+      border: {
+        selected: string;
+        notselected: string;
+      };
+      card: {
+        text: string;
+        texthover: string;
+        bghover: string;
+      };
+      animation: string;
+      svg: string;
+      svghover: string;
+      button: {
+        background: string;
+        text: string;
+        hover: {
+          background: string;
+          text: string;
+        };
+        border: string;
+      };
+      detailsButton: {
+        background: string;
+        text: string;
+        border: string;
+        hover: {
+          background: string;
+          text: string;
+          border: string;
+        };
+      };
+    };
+    light: {
+      theme: string;
+      background: string;
+      shadow: string;
+      text: {
+        selected: string;
+        notselected: string;
+      };
+      border: {
+        selected: string;
+        notselected: string;
+      };
+      card: {
+        text: string;
+        texthover: string;
+        bghover: string;
+      };
+      animation: string;
+      svg: string;
+      svghover: string;
+      button: {
+        background: string;
+        text: string;
+        hover: {
+          background: string;
+          text: string;
+        };
+        border: string;
+      };
+      detailsButton: {
+        background: string;
+        text: string;
+        border: string;
+        hover: {
+          background: string;
+          text: string;
+          border: string;
+        };
+      };
+    };
+  }
+}
+
+export const States: State = {
   dark: {
     theme: "dark",
     background: "bg-background",

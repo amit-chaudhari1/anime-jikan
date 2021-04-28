@@ -14,7 +14,9 @@ export const Emessage = ({
       <div className="w-full flex h-4/6 justify-center items-center">
         <img
           width={400}
+
           src={theme.theme == "dark" ? "/404dark.svg" : "/404light.svg"}
+
         />
       </div>
       <div className=" flex flex-col justify-center items-center w-full">
@@ -40,7 +42,9 @@ export const Emessage = ({
 
 import { Discover } from "../utils/data";
 const MyList = () => {
+
   const { myList } = useSelector((state: State) => state);
+
 
   return (
     <Layout title={"My List"}>
