@@ -6,15 +6,16 @@ import Layout from "../../components/Layout";
 import { asyncDataAction } from "../../redux/actions/asyncDataAction";
 import { URL } from "../../utils/URLS";
 import { FaSearch } from "react-icons/fa";
+import State from "../../types/state";
 
 const Search = () => {
-  const { data } = useSelector((state) => state);
+  const { data } = useSelector((state: State) => state);
   const {
     query: { pages },
   } = useRouter();
   const dispatch = useDispatch();
   useEffect(() => {
-    if (pages) {
+    if (Array.isArray(pages)) {
       const SEARCHURL = URL.SEARCH + pages.join("/");
       dispatch(asyncDataAction(SEARCHURL));
     }

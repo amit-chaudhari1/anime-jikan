@@ -33,5 +33,6 @@ yarn-error.log*
 # vercel
 .vercel
 
-# Don't store my logfiles
+
+#ignore my logs
 *.log

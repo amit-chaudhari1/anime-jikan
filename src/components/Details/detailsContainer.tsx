@@ -11,10 +11,11 @@ import {
 import { useEffect, useState } from "react";
 import Lottie from "lottie-react-web";
 import Heart from "../../public/heart.json";
+import State from "../../types/state";
 
-const DetailsContainer = ({ id, data = [] }) => {
+const DetailsContainer = ({ id, data }) => {
   const [click, setClick] = useState(false);
-  const { theme, loading, myList } = useSelector((state) => state);
+  const { theme, loading, myList } = useSelector((state: State) => state);
   const dispatch = useDispatch();
   useEffect(() => {
     const current = myList.filter((item) => item.id == id);
@@ -28,15 +29,14 @@ const DetailsContainer = ({ id, data = [] }) => {
       dispatch(addToMyList({ id: id, image: data.image, title: data.title }));
       setClick(true);
     }
-    
   };
   return loading ? (
     <Loader />
   ) : (
     <>
-    {/* {console.log(data)}
+      {/* {console.log(data)}
     <div className= " w-full h-full rounded-lg object-cover" style={{backgroundImage: 'url('+data.image+')',backgroundSize:'cover', backgroundRepeat: 'no-repeat', overflowY:'auto'}}> */}
-      <div 
+      <div
         className={`${theme.text.selected} w-full  py-20 lg:px-20  lg:py-8 flex justify-center`}
       >
         <div className="w-full lg:w-10/12 flex flex-col justify-center items-center lg:flex-row lg:justify-start lg:items-stretch ">
@@ -120,7 +120,9 @@ const DetailsContainer = ({ id, data = [] }) => {
             </div>
             <div className="flex flex-col py-4">
               <span className="text-xl font-bold">Total Episodes</span>
-              <span className="text-sm font-bold p-2">{data.totalepisode == "0" ? "NA" : data.totalepisode}</span>
+              <span className="text-sm font-bold p-2">
+                {data.totalepisode == "0" ? "NA" : data.totalepisode}
+              </span>
             </div>
           </div>
         </div>

@@ -4,10 +4,11 @@ import { useDispatch, useSelector } from "react-redux";
 import Layout from "../../components/Layout";
 import WatchingContainer from "../../components/watch/watchingContainer";
 import { asyncDataAction } from "../../redux/actions/asyncDataAction";
+import State from "../../types/state";
 
 import { URL } from "../../utils/URLS";
 const Recently = () => {
-  const { data } = useSelector((state) => state);
+  const { data } = useSelector((state: State) => state);
   const router = useRouter();
   const { slug } = router.query;
   const dispatch = useDispatch();
@@ -20,7 +21,9 @@ const Recently = () => {
   }, [slug]);
 
   return (
-    <Layout title={"Watching "+slug?.[0]}>{slug && <WatchingContainer data={data} slug={slug} />}</Layout>
+    <Layout title={"Watching " + slug?.[0]}>
+      {slug && <WatchingContainer data={data} slug={slug} />}
+    </Layout>
   );
 };
 

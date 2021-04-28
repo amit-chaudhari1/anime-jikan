@@ -2,8 +2,9 @@ import Card from "./Card";
 import { useSelector } from "react-redux";
 import PagiNation from "../PagiNation";
 import Loader from "../Loader/Loader";
-function Container({ Data = [], heading, page, Icon }) {
-  const { theme, loading } = useSelector((state) => state);
+import State from "../../types/state";
+function Container({ Popular = null, Data = [], heading, page = null, Icon }) {
+  const { theme, loading } = useSelector((state: State) => state);
   return loading ? (
     <Loader />
   ) : Data.length > 0 ? (
@@ -39,7 +40,9 @@ function Container({ Data = [], heading, page, Icon }) {
           <Card {...item} key={index} heading={heading} />
         ))}
       </div>
-      {page ? <PagiNation page={page} heading={"Page"} /> : null}
+      {/* This is the reason i hate JS, 
+      TODO: figure out what the total should ACTUALLY BE. */}
+      {page ? <PagiNation page={page} heading={"Page"} total={43} /> : null}
     </>
   ) : (
     <div className={` flex flex-col h-screen  w-full text-lg`}>

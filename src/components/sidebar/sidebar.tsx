@@ -5,8 +5,9 @@ import Sidenav from "./sidenav";
 import Search from "./search";
 import Image from "next/image";
 import Link from "next/link";
+import State from "../../types/state";
 const Sidebar = ({ visit }) => {
-  const { theme } = useSelector((state) => state);
+  const { theme } = useSelector((state: State) => state);
   const [show, setShow] = useState(false);
 
   return (

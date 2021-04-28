@@ -4,12 +4,14 @@ import Toggle from "../nav/Toggle";
 import { useSelector } from "react-redux";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { useEffect } from "react";
+import State from "../../types/state";
 
 const Sidenav = ({ onClick, show, visit }) => {
-  const { theme } = useSelector((state) => state);
+  const { theme } = useSelector((state: State) => state);
   useEffect(() => {
     var Mymenu = document.getElementById("sidemenu");
-    document.addEventListener("click", function (event) {
+    document.addEventListener("click", function (event: any) {
+      //TODO:<-- Yea, Please handle this as well , Amit from the future
       var isClicked = Mymenu.contains(event.target);
       if (!isClicked) onClick();
     });

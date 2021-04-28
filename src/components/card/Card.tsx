@@ -2,8 +2,13 @@ import styled, { State } from "styled-components";
 import { useSelector } from "react-redux";
 import Link from "next/link";
 import { AiFillCalendar } from "react-icons/ai";
+import State from "../../types/state";
 
-const MovieWrapper = styled.a`
+interface MovieWrapper {
+  card: any; //<-- TODO: FIX this.
+}
+
+const MovieWrapper = styled.a<MovieWrapper>`
   display: flex;
   flex-direction: column;
   text-decoration: none;
@@ -63,7 +68,7 @@ const DetailsWrapper = styled.div`
 `;
 
 const Card = ({ title, id, heading, image, episodenumber }) => {
-  const theme = useSelector((state) => state.theme);
+  const theme = useSelector((state: State) => state.theme);
   return (
     <Link
       href={

@@ -1,8 +1,11 @@
 import { useSelector } from "react-redux";
 import Link from "next/link";
 import styled from "styled-components";
-
-const EpButton = styled.div`
+import State from "../../types/state";
+interface Div {
+  detailsButton: any;
+}
+const EpButton = styled.div<Div>`
   border: 2px solid ${({ detailsButton }) => detailsButton.border};
   color: ${({ detailsButton }) => detailsButton.text};
   background: ${({ detailsButton }) => detailsButton.background};
@@ -20,7 +23,7 @@ const EpisodeContainer = ({ title, id, number, image }) => {
       myArray.push(i);
     }
   };
-  const theme = useSelector((state) => state.theme);
+  const theme = useSelector((state: State) => state.theme);
   return (
     <div className="w-full flex flex-col py-0 px-5 lg:px-20">
       <span

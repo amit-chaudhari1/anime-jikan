@@ -2,7 +2,11 @@ import Link from "next/link";
 import { useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import styled from "styled-components";
-const InSpan = styled.span`
+import State from "../../../types/state";
+interface SpanCustom {
+  border: any; //TODO: Refactoring, I promise
+}
+const InSpan = styled.span<SpanCustom>`
   &:hover {
     border-color: ${({ border }) => border.notselected};
   }
@@ -20,7 +24,13 @@ const Link2 = ({ theme, href, name, Icon }) => {
         <span
           className={`${theme.text.selected} ${theme.border.selected} cursor-pointer my-0.5 p-1 items-center flex flex-row  border  rounded-full`}
         >
-          <Icon size={13} style={{ margin: "0px 10px",color:name=="My List"?"red":theme.text.selected }} />
+          <Icon
+            size={13}
+            style={{
+              margin: "0px 10px",
+              color: name == "My List" ? "red" : theme.text.selected,
+            }}
+          />
           {name}
         </span>
       ) : (
@@ -28,7 +38,13 @@ const Link2 = ({ theme, href, name, Icon }) => {
           className={`${theme.text.notselected} cursor-pointer my-0.5 p-1 items-center flex flex-row  border border-transparent rounded-full`}
           border={theme.border}
         >
-          <Icon size={12} style={{ margin: "0px 10px",color:name=="My List"?"red":theme.text.selected }} />
+          <Icon
+            size={12}
+            style={{
+              margin: "0px 10px",
+              color: name == "My List" ? "red" : theme.text.selected,
+            }}
+          />
           {name}
         </InSpan>
       )}
@@ -36,13 +52,11 @@ const Link2 = ({ theme, href, name, Icon }) => {
   );
 };
 const NavContainer = ({ links, heading }) => {
-  const theme = useSelector((state) => state.theme);
+  const theme = useSelector((state: State) => state.theme);
 
   return (
     <div className="w-10/12 my-5 scrollbar" id="style-1">
-      <span
-        className={`${theme.text.selected} w-10/12 font-bold mx-2 text-xl`}
-      >
+      <span className={`${theme.text.selected} w-10/12 font-bold mx-2 text-xl`}>
         {heading}
       </span>
       <div className={`bg-gray-400 rounded-full h-0.5 mx-2 w-1/12`} />

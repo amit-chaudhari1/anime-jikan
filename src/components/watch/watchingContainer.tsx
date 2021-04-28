@@ -5,6 +5,7 @@ import PagiNation from "../PagiNation";
 import Loader from "../Loader/Loader";
 import { resumeAction } from "../../redux/actions/resumeAction";
 import Link from "next/link";
+import State from "../../types/state";
 
 const Data = [
   { id: 1, rate: 0.25 },
@@ -14,8 +15,11 @@ const Data = [
   { id: 5, rate: 1.5 },
   { id: 6, rate: 2 },
 ];
-
-const PlayBack = styled.span`
+interface Span {
+  button: any;
+  active: any;
+}
+const PlayBack = styled.span<Span>`
   background: ${({ button, active }) =>
     active ? button.background : button.hover.background};
   color: ${({ button, active }) => (active ? button.text : button.hover.text)};
@@ -28,8 +32,10 @@ const PlayBack = styled.span`
     border: 2px solid ${({ button }) => button.border};
   }
 `;
-
-const Select = styled.select`
+interface Select {
+  button: any;
+}
+const Select = styled.select<Select>`
   appearance: none;
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="50"><polygon  points="0,0 100,0 50,50"  style="fill:${({
     theme,
@@ -48,9 +54,9 @@ const Select = styled.select`
   }
 `;
 
-const WatchingContainer = ({ data = [], slug }) => {
+const WatchingContainer = ({ data, slug }) => {
   const Myref = useRef(null);
-  const { theme, loading, resumeId } = useSelector((state) => state);
+  const { theme, loading, resumeId } = useSelector((state: State) => state);
   const [link, setLink] = useState("");
   const [myList, setMyList] = useState([]);
   const dispatch = useDispatch();

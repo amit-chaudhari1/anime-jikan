@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import DarkModeToggle from "react-dark-mode-toggle";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleDark, toggleLight } from "../../redux/actions/themeAction";
+import State from "../../types/state";
 export default function Toggle() {
   const [isDarkMode, setIsDarkMode] = useState(() => true);
-  const theme = useSelector((state) => state.theme);
+  const theme = useSelector((state: State) => state.theme);
   useEffect(() => {
     if (theme.theme == "dark") {
       setIsDarkMode(true);

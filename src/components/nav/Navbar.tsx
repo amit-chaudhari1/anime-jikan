@@ -4,8 +4,9 @@ import NavContainer from "./nav_container/navcontainer";
 import { Discover, Genre } from "../../utils/data";
 import Toggle from "./Toggle";
 import { useSelector } from "react-redux";
+import State from "../../types/state";
 const Navbar = ({ visit }) => {
-  const { theme } = useSelector((state) => state);
+  const { theme } = useSelector((state: State) => state);
   return (
     <div
       className={`flex flex-col w-2/12 ${theme.background} ${theme.border.notselected} border-r justify-start items-center border-opacity-50 hidden lg:flex `}
