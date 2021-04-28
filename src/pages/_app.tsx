@@ -11,6 +11,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import countapi from "countapi-js";
+import State from "../types/state";
 const Msg = ({ resumeId }) => {
   return (
     <div className="flex flex-col">
@@ -27,7 +28,7 @@ const Msg = ({ resumeId }) => {
 
 const App = ({ Component, pageProps }) => {
   const [visit, setVisit] = useState(0);
-  const { theme, resumeId } = useSelector((state) => state);
+  const { theme, resumeId } = useSelector((state: State) => state);
   const router = useRouter();
   useEffect(() => {
     localStorage.removeItem("persist:root");

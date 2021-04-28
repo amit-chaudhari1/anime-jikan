@@ -5,6 +5,7 @@ import PagiNation from "../PagiNation";
 import Loader from "../Loader/Loader";
 import { resumeAction } from "../../redux/actions/resumeAction";
 import Link from "next/link";
+import State from "../../types/state";
 
 const Data = [
   { id: 1, rate: 0.25 },
@@ -50,7 +51,7 @@ const Select = styled.select`
 
 const WatchingContainer = ({ data = [], slug }) => {
   const Myref = useRef(null);
-  const { theme, loading, resumeId } = useSelector((state) => state);
+  const { theme, loading, resumeId } = useSelector((state: State) => state);
   const [link, setLink] = useState("");
   const [myList, setMyList] = useState([]);
   const dispatch = useDispatch();

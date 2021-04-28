@@ -2,6 +2,7 @@ import Link from "next/link";
 import { BiRightArrowAlt, BiLeftArrowAlt } from "react-icons/bi";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
+import State from "../types/state";
 const PB = styled.span`
   &:hover {
     background: ${({ button }) => button.hover.background};
@@ -10,7 +11,7 @@ const PB = styled.span`
 `;
 
 const PageButton = ({ href, children, style }) => {
-  const { theme } = useSelector((state) => state);
+  const { theme } = useSelector((state: State) => state);
   return (
     <Link href={href}>
       <PB

@@ -4,11 +4,12 @@ import { useDispatch, useSelector } from "react-redux";
 import Container from "../../components/card/Container";
 import Layout from "../../components/Layout";
 import { asyncDataAction } from "../../redux/actions/asyncDataAction";
-import {Discover} from "../../utils/data"
+import State from "../../types/state";
+import { Discover } from "../../utils/data";
 
 import { URL } from "../../utils/URLS";
 const Recently = () => {
-  const { data } = useSelector((state) => state);
+  const { data } = useSelector((state: State) => state);
   const router = useRouter();
   const { pages } = router.query;
   const dispatch = useDispatch();
@@ -21,7 +22,7 @@ const Recently = () => {
   }, [pages]);
 
   return (
-  <Layout>
+    <Layout>
       <Container
         Data={data.results}
         heading={"Recently Added"}

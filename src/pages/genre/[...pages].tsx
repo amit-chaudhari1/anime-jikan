@@ -5,11 +5,10 @@ import Container from "../../components/card/Container";
 import Layout from "../../components/Layout";
 import { asyncDataAction } from "../../redux/actions/asyncDataAction";
 import { URL } from "../../utils/URLS";
-import {
-  AiFillPlayCircle,
-} from "react-icons/ai";
+import { AiFillPlayCircle } from "react-icons/ai";
+import State from "../../types/state";
 const Genres = () => {
-  const { data } = useSelector((state) => state);
+  const { data } = useSelector((state: State) => state);
   const {
     query: { pages },
   } = useRouter();
@@ -23,7 +22,12 @@ const Genres = () => {
 
   return (
     <Layout title={pages?.[0]}>
-      <Container Data={data.results} Icon={AiFillPlayCircle} heading={"Genres"} page={pages} />
+      <Container
+        Data={data.results}
+        Icon={AiFillPlayCircle}
+        heading={"Genres"}
+        page={pages}
+      />
     </Layout>
   );
 };

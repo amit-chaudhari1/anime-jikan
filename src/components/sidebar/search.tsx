@@ -6,6 +6,7 @@ import cheerio from "cheerio";
 import Link from "next/link";
 
 import { useRouter } from "next/router";
+import State from "../../types/state";
 
 const Search = () => {
   const router = useRouter();
@@ -55,7 +56,6 @@ const Search = () => {
     SearchInput.style.maxWidth = "800px";
     SearchInput.style.marginLeft = "0.7rem";
     SearchBar.style.width = "auto";
-
   };
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -63,7 +63,7 @@ const Search = () => {
     setContent([]);
     setVal("");
   };
-  const theme = useSelector((state) => state.theme);
+  const theme = useSelector((state: State) => state.theme);
   return (
     <form className="absolute cursor-pointer right-0" onSubmit={handleSubmit}>
       <div

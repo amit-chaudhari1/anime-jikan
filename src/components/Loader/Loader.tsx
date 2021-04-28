@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
-import styled,{ keyframes } from "styled-components";
+import styled, { keyframes } from "styled-components";
+import State from "../../types/state";
 const loader = keyframes`
 
   0% { left:-100px }
@@ -69,7 +70,7 @@ const Loading = ({ card }) => {
 };
 
 const Loader = () => {
-  const theme = useSelector((state) => state.theme);
+  const theme = useSelector((state: State) => state.theme);
   return (
     <div
       className={`w-full relative overflow-hidden h-screen flex justify-center items-center ${theme.text.selected} `}

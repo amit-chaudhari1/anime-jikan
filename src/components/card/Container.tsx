@@ -2,8 +2,9 @@ import Card from "./Card";
 import { useSelector } from "react-redux";
 import PagiNation from "../PagiNation";
 import Loader from "../Loader/Loader";
+import State from "../../types/state";
 function Container({ Data = [], heading, page, Icon }) {
-  const { theme, loading } = useSelector((state) => state);
+  const { theme, loading } = useSelector((state: State) => state);
   return loading ? (
     <Loader />
   ) : Data.length > 0 ? (
