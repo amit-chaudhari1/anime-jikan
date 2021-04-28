@@ -40,7 +40,7 @@ const App = ({ Component, pageProps }) => {
   return (
     <div className={`${theme.background}  `}>
       <Head>
-        <meta charset="utf-8" />
+        <meta charSet="utf-8" />
         <link rel="icon" href={"/shuriken.svg"} />
         <link rel="manifest" href="/manifest.json" />
         <link

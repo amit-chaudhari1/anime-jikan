@@ -15,7 +15,7 @@ const Search = () => {
   } = useRouter();
   const dispatch = useDispatch();
   useEffect(() => {
-    if (pages) {
+    if (Array.isArray(pages)) {
       const SEARCHURL = URL.SEARCH + pages.join("/");
       dispatch(asyncDataAction(SEARCHURL));
     }

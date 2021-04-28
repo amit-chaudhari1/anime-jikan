@@ -14,7 +14,7 @@ const Genres = () => {
   } = useRouter();
   const dispatch = useDispatch();
   useEffect(() => {
-    if (pages) {
+    if (Array.isArray(pages)) {
       const GENREURL = URL.GENRES + pages.join("/");
       dispatch(asyncDataAction(GENREURL));
     }

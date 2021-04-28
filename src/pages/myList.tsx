@@ -5,7 +5,9 @@ import Container from "../components/card/Container";
 import Layout from "../components/Layout";
 import State from "../types/state";
 
-export const Emessage = ({ message }) => {
+export const Emessage = ({
+  message = "Error: Sorry, App is in Development, i guess.",
+}) => {
   const { theme } = useSelector((state: State) => state);
   return (
     <div className="flex flex-col h-screen justify-start items-center">

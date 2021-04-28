@@ -10,4 +10,5 @@ const Error = () => {
   );
 };
 
+//TODO: think about: Should Emessage have an cumpolsory message input?
 export default Error;
