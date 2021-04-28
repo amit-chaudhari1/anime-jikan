@@ -3,7 +3,10 @@ import { useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import styled from "styled-components";
 import State from "../../../types/state";
-const InSpan = styled.span`
+interface SpanCustom {
+  border: any; //TODO: Refactoring, I promise
+}
+const InSpan = styled.span<SpanCustom>`
   &:hover {
     border-color: ${({ border }) => border.notselected};
   }

@@ -13,7 +13,7 @@ import Lottie from "lottie-react-web";
 import Heart from "../../public/heart.json";
 import State from "../../types/state";
 
-const DetailsContainer = ({ id, data = [] }) => {
+const DetailsContainer = ({ id, data }) => {
   const [click, setClick] = useState(false);
   const { theme, loading, myList } = useSelector((state: State) => state);
   const dispatch = useDispatch();

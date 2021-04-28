@@ -10,7 +10,8 @@ const Sidenav = ({ onClick, show, visit }) => {
   const { theme } = useSelector((state: State) => state);
   useEffect(() => {
     var Mymenu = document.getElementById("sidemenu");
-    document.addEventListener("click", function (event) {
+    document.addEventListener("click", function (event: any) {
+      //TODO:<-- Yea, Please handle this as well , Amit from the future
       var isClicked = Mymenu.contains(event.target);
       if (!isClicked) onClick();
     });

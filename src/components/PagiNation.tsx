@@ -3,14 +3,20 @@ import { BiRightArrowAlt, BiLeftArrowAlt } from "react-icons/bi";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 import State from "../types/state";
-const PB = styled.span`
+interface Span {
+  button: any; //TODO:<-- Fix this...
+}
+
+//TODO: Is there a simpler way to do this?
+//THis is not very readable.
+const PB = styled.span<Span>`
   &:hover {
     background: ${({ button }) => button.hover.background};
     color: ${({ button }) => button.hover.text};
   }
 `;
 
-const PageButton = ({ href, children, style }) => {
+const PageButton = ({ href, children, style, pre: boolean }) => {
   const { theme } = useSelector((state: State) => state);
   return (
     <Link href={href}>

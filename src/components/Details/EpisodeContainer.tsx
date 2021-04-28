@@ -2,8 +2,10 @@ import { useSelector } from "react-redux";
 import Link from "next/link";
 import styled from "styled-components";
 import State from "../../types/state";
-
-const EpButton = styled.div`
+interface Div {
+  detailsButton: any;
+}
+const EpButton = styled.div<Div>`
   border: 2px solid ${({ detailsButton }) => detailsButton.border};
   color: ${({ detailsButton }) => detailsButton.text};
   background: ${({ detailsButton }) => detailsButton.background};

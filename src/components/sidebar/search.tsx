@@ -13,14 +13,15 @@ const Search = () => {
   const [val, setVal] = useState("");
   const [content, setContent] = useState([]);
   useEffect(() => {
-    var SearchBar = document.getElementById("search");
-    var SearchInput = document.getElementById("searchinput");
+    let SearchBar = document.getElementById("search");
+    let SearchInput = document.getElementById("searchinput");
     document.addEventListener("click", function (event) {
-      var isClickInside = SearchBar.contains(event.target);
+      const eventTarget = event.target;
+      const isClickInside = SearchBar.contains(eventTarget as Node); //TODO: Refactor. PLS. I beg you. Future amit, bhai sambhal le pls.
 
       if (!isClickInside) {
-        SearchInput.style.maxWidth = 0;
-        SearchInput.style.marginLeft = 0;
+        SearchInput.style.maxWidth = "0";
+        SearchInput.style.marginLeft = "0";
         setContent([]);
         setVal("");
       }
@@ -29,11 +30,12 @@ const Search = () => {
   const handleSearch = async (e) => {
     setVal(e.target.value);
     let d = await axios.get(
-      "https://ajax.gogocdn.net/site/loadAjaxSearch?keyword=" + val
+      "https://ajax.gogocdn.net/site/loadAjaxSearch?keyword=" + val //TODO: GET... WHAT!!!
     );
     d = d.data.content.replaceAll("category/", "/details/");
+    const dAsString = JSON.parse(d.toString());
     var myList = [];
-    var $ = cheerio.load(d);
+    var $ = cheerio.load(dAsString);
     $("a").each(function (index, element) {
       let result = {};
       let title = $(this).text();

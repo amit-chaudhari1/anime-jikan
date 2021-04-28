@@ -40,7 +40,9 @@ function Container({ Data = [], heading, page, Icon }) {
           <Card {...item} key={index} heading={heading} />
         ))}
       </div>
-      {page ? <PagiNation page={page} heading={"Page"} /> : null}
+      {/* This is the reason i hate JS, 
+      TODO: figure out what the total should ACTUALLY BE. */}
+      {page ? <PagiNation page={page} heading={"Page"} total={43} /> : null}
     </>
   ) : (
     <div className={` flex flex-col h-screen  w-full text-lg`}>
