@@ -58,7 +58,7 @@ const EpisodeContainer = ({
                   <img
                     src={image}
                     className="h-full rounded-full w-full  object-cover"
-                    alt={id}
+                    alt={id.toString()}
                   />
                 </div>
                 <span className="w-2/3 flex justify-center items-center text-center h-full">

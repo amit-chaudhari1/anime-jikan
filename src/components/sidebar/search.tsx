@@ -14,6 +14,7 @@ const Search = () => {
   const [content, setContent] = useState([]);
   useEffect(() => {
     let SearchBar = document.getElementById("search");
+
     let SearchInput = document.getElementById("searchinput");
     document.addEventListener("click", function (event) {
       const eventTarget = event.target;

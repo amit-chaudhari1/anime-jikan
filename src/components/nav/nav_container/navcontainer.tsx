@@ -12,7 +12,7 @@ const InSpan = styled.span<SpanCustom>`
   }
 `;
 
-const Link2 = (theme: any, href: any, name: any, Icon: any) => {
+const Link2 = ({ theme, href, name, Icon }: any) => {
   const router = useRouter();
   const H = href.split("/");
   const H1 = H[H.length - 2];
@@ -51,7 +51,11 @@ const Link2 = (theme: any, href: any, name: any, Icon: any) => {
     </Link>
   );
 };
-const NavContainer = ({ links, heading }) => {
+interface IPropsNavContainer {
+  links: Array<string>;
+  heading: string;
+}
+const NavContainer = ({ links, heading }: IPropsNavContainer) => {
   const theme = useSelector((state: State) => state.theme);
 
   return (
@@ -62,7 +66,7 @@ const NavContainer = ({ links, heading }) => {
       <div className={`bg-gray-400 rounded-full h-0.5 mx-2 w-1/12`} />
 
       <div className="text-base flex flex-col my-1.5">
-        {links?.map((Item) => (
+        {links?.map((Item: any) => (
           <Link2
             href={Item.link}
             name={Item.name}

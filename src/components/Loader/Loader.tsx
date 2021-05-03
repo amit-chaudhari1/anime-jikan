@@ -62,7 +62,7 @@ const Shadow = styled.div<Div2>`
   border-radius: 50%;
   animation: ${shadow} 0.5s linear infinite;
 `;
-const Loading = ({ card }) => {
+const Loading = ({ card }: any) => {
   return (
     <Load>
       <Shadow card={card} />
