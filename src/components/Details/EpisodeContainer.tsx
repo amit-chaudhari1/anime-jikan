@@ -15,9 +15,19 @@ const EpButton = styled.div<Div>`
     background: ${({ detailsButton }) => detailsButton.hover.background};
   }
 `;
-
-const EpisodeContainer = ({ title, id, number, image }) => {
-  var myArray = [];
+interface IpropsEpisodeContainer {
+  title: string;
+  id: number;
+  number: number;
+  image: string;
+}
+const EpisodeContainer = ({
+  title,
+  id,
+  number,
+  image,
+}: IpropsEpisodeContainer) => {
+  let myArray: Array<number>;
   const myFunc = () => {
     for (let i = number; i >= 1; i--) {
       myArray.push(i);

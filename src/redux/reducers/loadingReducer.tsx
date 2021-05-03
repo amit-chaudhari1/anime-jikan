@@ -1,6 +1,6 @@
 import { MyAction } from "../actions/actions";
 
-export const loadingReducer = (state = true, action) => {
+export const loadingReducer = (state = true, action: any) => {
   switch (action.type) {
     case MyAction.FETCH:
       return true;

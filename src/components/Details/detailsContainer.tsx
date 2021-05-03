@@ -13,12 +13,12 @@ import Lottie from "lottie-react-web";
 import Heart from "../../public/heart.json";
 import State from "../../types/state";
 
-const DetailsContainer = ({ id, data }) => {
+const DetailsContainer = (id: any, data: any) => {
   const [click, setClick] = useState(false);
   const { theme, loading, myList } = useSelector((state: State) => state);
   const dispatch = useDispatch();
   useEffect(() => {
-    const current = myList.filter((item) => item.id == id);
+    const current = myList.filter((item: any) => item.id == id);
     current.length > 0 ? setClick(true) : setClick(false);
   }, [id]);
   const handleClick = () => {
@@ -100,7 +100,10 @@ const DetailsContainer = ({ id, data }) => {
               <span
                 className={`${theme.text.notselected} flex flex-row flex-wrap justify-start w-full items-center`}
               >
-                {data.genres?.split(", ").map((Item, index) => (
+                {data.genres?.split(", ").map((
+                  Item: any,
+                  index: any //should this be ok...
+                ) => (
                   <Link
                     href={`/genre/${Item.split(" ").join("-")}/1`}
                     key={index}

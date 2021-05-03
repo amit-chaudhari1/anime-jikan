@@ -12,7 +12,7 @@ const InSpan = styled.span<SpanCustom>`
   }
 `;
 
-const Link2 = ({ theme, href, name, Icon }) => {
+const Link2 = (theme: any, href: any, name: any, Icon: any) => {
   const router = useRouter();
   const H = href.split("/");
   const H1 = H[H.length - 2];

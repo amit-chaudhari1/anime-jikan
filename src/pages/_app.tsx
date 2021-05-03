@@ -12,7 +12,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import countapi from "countapi-js";
 import State from "../types/state";
-const Msg = ({ resumeId }) => {
+const Msg = (resumeId: any) => {
   return (
     <div className="flex flex-col">
       <span>You were watching</span>
@@ -26,7 +26,7 @@ const Msg = ({ resumeId }) => {
   );
 };
 
-const App = ({ Component, pageProps }) => {
+const App = (Component: any, pageProps: any) => {
   const [visit, setVisit] = useState(0);
   const { theme, resumeId } = useSelector((state: State) => state);
   const router = useRouter();
@@ -147,7 +147,7 @@ const App = ({ Component, pageProps }) => {
   );
 };
 
-const MYapp = ({ Component, pageProps }) => (
+const MYapp = (Component: any, pageProps: any) => (
   <Provider store={Store}>
     <PersistGate loading={null} persistor={Persistor}>
       <App Component={Component} pageProps={pageProps} />
