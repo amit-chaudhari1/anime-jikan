@@ -3,14 +3,14 @@ import { useSelector } from "react-redux";
 import PagiNation from "../PagiNation";
 import Loader from "../Loader/Loader";
 import State from "../../types/state";
-
-function Container(
-  Popular: any,
-  Data: any,
-  heading: any,
-  page: any,
-  Icon: any
-) {
+interface IPropsContainer {
+  Popular?: any;
+  Data?: any;
+  heading: any;
+  page?: any;
+  Icon: any;
+}
+function Container({ Popular, Data, heading, page, Icon }: IPropsContainer) {
   const { theme, loading } = useSelector((state: State) => state);
   return loading ? (
     <Loader />

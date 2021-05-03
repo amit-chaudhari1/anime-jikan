@@ -4,7 +4,10 @@ interface IpropsLayout {
   children: any;
   title?: string;
 }
-const Layout = ({ children, title = "Anime Jikan" }: IpropsLayout) => {
+const Layout: React.FC<IpropsLayout> = ({
+  children,
+  title = "Anime Jikan",
+}: IpropsLayout) => {
   return (
     <div className="w-full justify-center items-center min-h-screen lg:h-full lg:w-10/12">
       <Head>
