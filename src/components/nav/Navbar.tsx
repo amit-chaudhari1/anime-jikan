@@ -5,7 +5,7 @@ import { Discover, Genre } from "../../utils/data";
 import Toggle from "./Toggle";
 import { useSelector } from "react-redux";
 import State from "../../types/state";
-const Navbar = ({ visit }) => {
+const Navbar = ({ visit }: any) => {
   const { theme } = useSelector((state: State) => state);
   return (
     <div

@@ -16,7 +16,7 @@ const PB = styled.span<Span>`
   }
 `;
 
-const PageButton = ({ href, children, style, pre: boolean }) => {
+const PageButton = ({ href, children, style, pre: boolean }: any) => {
   const { theme } = useSelector((state: State) => state);
   return (
     <Link href={href}>
@@ -30,7 +30,7 @@ const PageButton = ({ href, children, style, pre: boolean }) => {
   );
 };
 
-const PagiNation = ({ page, total, heading }) => {
+const PagiNation = ({ page, total, heading }: any) => {
   const pgn = parseInt(page[page.length - 1]);
   const nxt =
     page.length == 1 ? String(pgn + 1) : page[0] + "/" + String(pgn + 1);

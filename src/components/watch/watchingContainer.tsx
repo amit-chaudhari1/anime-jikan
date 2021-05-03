@@ -53,8 +53,12 @@ const Select = styled.select<Select>`
     color: ${({ button }) => button.hover.text};
   }
 `;
+interface IWatcherContainer {
+  data: any;
+  slug: any;
+}
 
-const WatchingContainer = ({ data, slug }) => {
+const WatchingContainer = ({ data, slug }: IWatcherContainer) => {
   const Myref = useRef(null);
   const { theme, loading, resumeId } = useSelector((state: State) => state);
   const [link, setLink] = useState("");
@@ -85,7 +89,7 @@ const WatchingContainer = ({ data, slug }) => {
     return () => clearInterval(myInterval);
   }, [data.links]);
 
-  const handleClick = (rate) => {
+  const handleClick = (rate: number) => {
     Myref.current.playbackRate = rate;
   };
 

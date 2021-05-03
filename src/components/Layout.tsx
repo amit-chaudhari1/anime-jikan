@@ -2,7 +2,7 @@ import Head from "next/head";
 
 interface IpropsLayout {
   children: any;
-  title: string;
+  title?: string;
 }
 const Layout = ({ children, title = "Anime Jikan" }: IpropsLayout) => {
   return (

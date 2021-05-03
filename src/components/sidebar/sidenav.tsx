@@ -6,7 +6,13 @@ import { AiOutlineCloseCircle } from "react-icons/ai";
 import { useEffect } from "react";
 import State from "../../types/state";
 
-const Sidenav = ({ onClick, show, visit }) => {
+interface ISideNavProps {
+  onClick: any;
+  show: any;
+  visit: any;
+}
+
+const Sidenav = ({ onClick, show, visit }: ISideNavProps) => {
   const { theme } = useSelector((state: State) => state);
   useEffect(() => {
     var Mymenu = document.getElementById("sidemenu");

@@ -52,7 +52,7 @@ const Link2 = ({ theme, href, name, Icon }: any) => {
   );
 };
 interface IPropsNavContainer {
-  links: Array<string>;
+  links: any;
   heading: string;
 }
 const NavContainer = ({ links, heading }: IPropsNavContainer) => {

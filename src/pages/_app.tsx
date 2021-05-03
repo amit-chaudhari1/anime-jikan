@@ -33,7 +33,7 @@ const App = (Component: any, pageProps: any) => {
   useEffect(() => {
     localStorage.removeItem("persist:root");
     if (resumeId) if (resumeId) toast.info(<Msg resumeId={resumeId.data} />);
-    countapi.update("animex.ninja", process.env.key, 1).then((result) => {
+    countapi.update("animex.ninja", process.env.key, 1).then((result: any) => {
       setVisit(result.value);
     });
   }, []);
