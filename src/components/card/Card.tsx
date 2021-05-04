@@ -66,8 +66,14 @@ const DetailsWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
 `;
-
-const Card = ({ title, id, heading, image, episodenumber }) => {
+interface IcardProps {
+  title: string;
+  id: number;
+  heading: string;
+  image: string;
+  episodenumber: number;
+}
+const Card = ({ title, id, heading, image, episodenumber }: IcardProps) => {
   const theme = useSelector((state: State) => state.theme);
   return (
     <Link

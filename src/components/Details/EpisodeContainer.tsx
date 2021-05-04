@@ -15,9 +15,19 @@ const EpButton = styled.div<Div>`
     background: ${({ detailsButton }) => detailsButton.hover.background};
   }
 `;
-
-const EpisodeContainer = ({ title, id, number, image }) => {
-  var myArray = [];
+interface IpropsEpisodeContainer {
+  title: string;
+  id: number;
+  number: number;
+  image: string;
+}
+const EpisodeContainer = ({
+  title,
+  id,
+  number,
+  image,
+}: IpropsEpisodeContainer) => {
+  let myArray: Array<number>;
   const myFunc = () => {
     for (let i = number; i >= 1; i--) {
       myArray.push(i);
@@ -48,7 +58,7 @@ const EpisodeContainer = ({ title, id, number, image }) => {
                   <img
                     src={image}
                     className="h-full rounded-full w-full  object-cover"
-                    alt={id}
+                    alt={id.toString()}
                   />
                 </div>
                 <span className="w-2/3 flex justify-center items-center text-center h-full">

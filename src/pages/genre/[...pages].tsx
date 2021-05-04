@@ -7,6 +7,7 @@ import { asyncDataAction } from "../../redux/actions/asyncDataAction";
 import { URL } from "../../utils/URLS";
 import { AiFillPlayCircle } from "react-icons/ai";
 import State from "../../types/state";
+
 const Genres = () => {
   const { data } = useSelector((state: State) => state);
   const {
@@ -23,7 +24,7 @@ const Genres = () => {
   return (
     <Layout title={pages?.[0]}>
       <Container
-        Data={data.results}
+        Data={data?.results}
         Icon={AiFillPlayCircle}
         heading={"Genres"}
         page={pages}

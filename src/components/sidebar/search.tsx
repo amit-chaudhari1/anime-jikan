@@ -14,6 +14,7 @@ const Search = () => {
   const [content, setContent] = useState([]);
   useEffect(() => {
     let SearchBar = document.getElementById("search");
+
     let SearchInput = document.getElementById("searchinput");
     document.addEventListener("click", function (event) {
       const eventTarget = event.target;
@@ -27,17 +28,18 @@ const Search = () => {
       }
     });
   }, []);
-  const handleSearch = async (e) => {
+  const handleSearch = async (e: any) => {
     setVal(e.target.value);
     let d = await axios.get(
       "https://ajax.gogocdn.net/site/loadAjaxSearch?keyword=" + val //TODO: GET... WHAT!!!
     );
     d = d.data.content.replaceAll("category/", "/details/");
     const dAsString = JSON.parse(d.toString());
-    var myList = [];
+    var myList = new Array<string>();
     var $ = cheerio.load(dAsString);
     $("a").each(function (index, element) {
       let result = {};
+
       let title = $(this).text();
       let link = $(this).attr().href;
       let image = $(this)
@@ -46,7 +48,7 @@ const Search = () => {
         .style.slice(15)
         .replace(/[("")]/g, "");
       result = { title, link, image };
-      myList.push(result);
+      myList.push(result.toString());
     });
 
     setContent(myList);
@@ -59,7 +61,7 @@ const Search = () => {
     SearchInput.style.marginLeft = "0.7rem";
     SearchBar.style.width = "auto";
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
     router.push(`/search/${val}/1`);
     setContent([]);

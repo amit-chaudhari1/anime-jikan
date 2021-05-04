@@ -1,7 +1,8 @@
-import { DefaultRootState } from "react-redux";
+// import { DefaultRootState } from "react-redux";
 
-export default interface State extends DefaultRootState {
-  theme: any; //TODO: yeah, I'll fix this later
+export default interface State {
+  theme: any;
+  //TODO: yeah, I'll fix this later
   loading: any;
   myList: any;
   resumeId: any;

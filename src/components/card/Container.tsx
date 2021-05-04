@@ -3,8 +3,22 @@ import { useSelector } from "react-redux";
 import PagiNation from "../PagiNation";
 import Loader from "../Loader/Loader";
 import State from "../../types/state";
-function Container({ Popular = null, Data = [], heading, page = null, Icon }) {
+interface IPropsContainer {
+  Popular?: any;
+  Data: any; //Array<any>
+  heading: any;
+  page?: any;
+  Icon: any;
+}
+function Container({
+  Popular,
+  Data = [],
+  heading,
+  page,
+  Icon,
+}: IPropsContainer) {
   const { theme, loading } = useSelector((state: State) => state);
+  // if(data)
   return loading ? (
     <Loader />
   ) : Data.length > 0 ? (
@@ -36,12 +50,10 @@ function Container({ Popular = null, Data = [], heading, page = null, Icon }) {
       </div>
 
       <div className="grid grid-cols-2  w-full px-10 my-6  gap-10  justify-center  md:grid-cols-3 lg:grid-cols-3 lg:px-16 lg:my-16   xl:grid-cols-5 xl:gap-8">
-        {Data?.map((item, index) => (
+        {Data?.map((item: any, index: any) => (
           <Card {...item} key={index} heading={heading} />
         ))}
       </div>
-      {/* This is the reason i hate JS, 
-      TODO: figure out what the total should ACTUALLY BE. */}
       {page ? <PagiNation page={page} heading={"Page"} total={43} /> : null}
     </>
   ) : (

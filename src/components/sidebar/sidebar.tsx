@@ -6,7 +6,10 @@ import Search from "./search";
 import Image from "next/image";
 import Link from "next/link";
 import State from "../../types/state";
-const Sidebar = ({ visit }) => {
+interface ISidebarProps {
+  visit: any;
+}
+const Sidebar = ({ visit }: ISidebarProps) => {
   const { theme } = useSelector((state: State) => state);
   const [show, setShow] = useState(false);
 

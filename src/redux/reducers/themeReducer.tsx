@@ -1,7 +1,7 @@
 import { MyAction } from "../actions/actions";
 import { States } from "../States";
 
-export const themeReducer = (state = States.light, action) => {
+export const themeReducer = (state = States.light, action: any) => {
   switch (action.type) {
     case MyAction.DARK:
       return States.dark;

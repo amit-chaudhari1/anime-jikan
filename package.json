@@ -1,11 +1,11 @@
 {
-  "name": "next-animex",
+  "name": "next-anime-jikan",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "build": "next build",
     "start": "next start",
-    "dev": "next -p 8080"
+    "dev": "NODE_OPTIONS='--inspect' next dev"
   },
   "dependencies": {
     "@svgr/webpack": "^5.5.0",

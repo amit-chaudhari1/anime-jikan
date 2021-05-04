@@ -1,6 +1,6 @@
 import { MyAction } from "../actions/actions";
 
-export const asyncDataReducer = (state = [], action) => {
+export const asyncDataReducer = (state: any = null, action: any) => {
   switch (action.type) {
     case MyAction.FETCH:
       return state;
