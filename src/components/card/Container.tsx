@@ -5,13 +5,20 @@ import Loader from "../Loader/Loader";
 import State from "../../types/state";
 interface IPropsContainer {
   Popular?: any;
-  Data?: any;
+  Data: any; //Array<any>
   heading: any;
   page?: any;
   Icon: any;
 }
-function Container({ Popular, Data, heading, page, Icon }: IPropsContainer) {
+function Container({
+  Popular,
+  Data = [],
+  heading,
+  page,
+  Icon,
+}: IPropsContainer) {
   const { theme, loading } = useSelector((state: State) => state);
+  // if(data)
   return loading ? (
     <Loader />
   ) : Data.length > 0 ? (

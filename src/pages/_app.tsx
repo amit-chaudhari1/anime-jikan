@@ -12,6 +12,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import countapi from "countapi-js";
 import State from "../types/state";
+
 const Msg = (resumeId: any) => {
   return (
     <div className="flex flex-col">
@@ -26,14 +27,15 @@ const Msg = (resumeId: any) => {
   );
 };
 
-const App = (Component: any, pageProps: any) => {
+const App = ({ Component, pageProps }: any) => {
   const [visit, setVisit] = useState(0);
   const { theme, resumeId } = useSelector((state: State) => state);
   const router = useRouter();
   useEffect(() => {
     localStorage.removeItem("persist:root");
     if (resumeId) if (resumeId) toast.info(<Msg resumeId={resumeId.data} />);
-    countapi.update("animex.ninja", process.env.key, 1).then((result: any) => {
+    countapi.update("Anime-Jikan", process.env.key, 1).then((result: any) => {
+      // console.log(process.env.key);
       setVisit(result.value);
     });
   }, []);
@@ -147,7 +149,7 @@ const App = (Component: any, pageProps: any) => {
   );
 };
 
-const MYapp = (Component: any, pageProps: any) => (
+const MYapp = ({ Component, pageProps }: any) => (
   <Provider store={Store}>
     <PersistGate loading={null} persistor={Persistor}>
       <App Component={Component} pageProps={pageProps} />

@@ -1,3 +1,4 @@
+/*
 declare module "styled-components" {
   export interface abx {
     dark: {
@@ -82,6 +83,7 @@ declare module "styled-components" {
     };
   }
 }
+*/
 
 export const States = {
   dark: {

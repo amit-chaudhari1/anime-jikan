@@ -1,6 +1,6 @@
 import { MyAction } from "../actions/actions";
 
-export const myListReducer = (state: any, action: any) => {
+export const myListReducer = (state: any = null, action: any) => {
   switch (action.type) {
     case MyAction.ADDTOMYLIST:
       return [...state, action.payload];

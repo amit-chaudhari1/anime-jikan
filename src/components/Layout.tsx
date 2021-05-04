@@ -1,7 +1,7 @@
 import Head from "next/head";
 
 interface IpropsLayout {
-  children: any;
+  children?: any;
   title?: string;
 }
 const Layout: React.FC<IpropsLayout> = ({
